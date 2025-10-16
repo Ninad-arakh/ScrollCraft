@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+
+body{
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-100);
+    
+}
+
+@font-face {
+    font-family: "cinzel";
+    src: url("./assets/fonts/CinzelDecorative-VariableFont_wght.ttf");
+}
+
+@font-face{
+    font-family: "bebas";
+    src: url("./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf");
+}
+
+@font-face{
+    font-family: "oxanium";
+    src: url("./assets/fonts/Oxanium/Oxanium-VariableFont_wght.ttf");
+}
+
+@font-face{
+    font-family: "orbitron";
+    src: url("./assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf")
+}
+
+.navbar {
+  position: sticky;
+  top: 2px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar.scrolled {
+  transform: translateY(-100px);
+}
