@@ -4,8 +4,17 @@
 body{
     background-color: var(--color-neutral-900);
     color: var(--color-neutral-100);
-    
 }
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
 
 @font-face {
     font-family: "cinzel";
