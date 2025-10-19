@@ -1,73 +1,82 @@
 import React, { useRef, useEffect } from "react";
-import Navbar from "./Navbar";
 import HeroForeground from "./HeroForeground";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import bgWall from "/bg-videos/amv_web.mp4";
+import { useGSAP } from "@gsap/react";
+import Section2 from "./Section2";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const navigate = useNavigate();
+  const videoWrapperRef = useRef(null);
+  const heroRef = useRef(null);
 
-  // scrollbar hiding functionality with simple javascript
-  // useEffect(() => {
-  //   const navbar = navbarRef.current;
-  //   const trigger = triggerRef.current;
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (!entry.isIntersecting) {
-  //           navbar.classList.remove("scrolled");
-  //         } else {
-  //           navbar.classList.add("scrolled");
-  //         }
-  //       });
-  //     },
-  //     { threshold: 0.1 } // Trigger when 20% of trigger is out of view, approximating "top 20%"
-  //   );
-  //   if (trigger) observer.observe(trigger);
-  //   return () => {
-  //     if (trigger) observer.unobserve(trigger);
-  //   };
-  // }, []);
+  // top view distortion animation on scroll
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: heroRef.current,
+        // start: "top -10%",
+        start: "top top",
+        end: "bottom 20%",
+        scrub: 0.2,
+        pin: true,
+        // anticipatePin:1,
+        // markers: true,
+      },
+    });
 
-  // useEffect(() => {
-  //   const el = heroRef.current;
-
-  //   ScrollTrigger.create({
-  //     trigger: el,
-  //     start: "bottom bottom",
-  //     markers: true,
-  //     onEnter: () => {
-  //       gsap.to(el, {
-  //         opacity: 0,
-  //         duration: 0.8,
-  //         ease: "power2.out",
-  //         onComplete: () => navigate("/section2"),
-  //       });
-  //     },
-  //   });
-  // }, [navigate]);
+    tl.fromTo(
+      videoWrapperRef.current,
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        scale: 1,
+        filter: "brightness(1)",
+      },
+      {
+        clipPath: "polygon(5% 0, 95% 0, 100% 100%, 0 100%)",
+        // scale: 1.05,
+        filter: "brightness(0.7)",
+        ease: "none",
+        overflow: "hidden",
+      }
+    );
+  }, []);
 
   return (
-    <section  className="relative w-full scrollbar-hidden">
-      {/* <div className="w-full h-screen z-0 absolute top-0">
-        {/* Add background amv here 
-      </div> */}
-
-      <div className="w-full h-screen z-0 absolute top-0 bg-cover bg-center bg-your-image">
-        {/* Background image or video */}
+    <section ref={heroRef} className="absolute top-0 w-full scrollbar-hidden">
+      {/* Background image or video */}
+      <div
+        ref={videoWrapperRef}
+        className="absolute top-0 left-0 w-full h-screen overflow-hidden "
+        style={{
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          transition: "clip-path 0.3s ease",
+        }}
+      >
+        <video
+          src={bgWall}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full origin-top bg-cover"
+        ></video>
       </div>
 
       <div className="w-full ">
         <div className="w-full h-screen z-10">
           <HeroForeground />
         </div>
-        {/* Trigger point after initial hero section */}
-        <div className="w-full h-[50vh] bg-red-500"></div>
+
+        <div className="w-full ">
+          {/* <Section2 /> */}
+        </div>
       </div>
-    </section >
+    </section>
   );
 };
 

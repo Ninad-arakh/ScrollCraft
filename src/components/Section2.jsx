@@ -42,7 +42,7 @@ const Section2 = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-screen h-[200vh] bg-[radial-gradient(circle_at_center,_#0a0a0a_0%,_#000_100%)] flex flex-col items-center justify-center text-center"
+      className="relative w-full h-[200vh] bg-[radial-gradient(circle_at_center,_#0a0a0a_0%,_#000_100%)] flex flex-col items-center justify-center text-center"
     >
       <h2 className="text-5xl font-bold mb-10">The Awakening Realm</h2>
       <p className="max-w-xl text-gray-400 leading-relaxed">

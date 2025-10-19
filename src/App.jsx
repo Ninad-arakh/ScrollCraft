@@ -26,6 +26,8 @@ const App = () => {
         isHidden.current = false;
       }
       lastScrollY.current = currentScrollY;
+      // console.log(currentScrollY)
+      
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -36,7 +38,7 @@ const App = () => {
     <div className="w-full h-screen">
       <BrowserRouter>
         <div ref={navRef}
-          className="fixed top-3 w-full text-white flex justify-center z-50 navbar">
+          className="fixed top-3 mt-3 w-full text-white flex justify-center z-50 navbar">
           <Navbar />
         </div>
         <Routes>
