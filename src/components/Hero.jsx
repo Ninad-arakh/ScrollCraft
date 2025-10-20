@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import bgWall from "/bg-videos/amv_web.mp4";
 import { useGSAP } from "@gsap/react";
 import Section2 from "./Section2";
+import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,13 +43,29 @@ const Hero = () => {
         filter: "brightness(0.7)",
         ease: "none",
         overflow: "hidden",
+        opacity: 0.9
       }
     );
   }, []);
 
+  useEffect(()=>{
+    const lenis = new Lenis({
+      duration: 0.7,
+    })
+    function raf(time){
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+    return () => {
+      lenis.destroy();
+    };
+  },[])
+
   return (
-    <section ref={heroRef} className="absolute top-0 w-full scrollbar-hidden">
+    <section className="absolute top-0 w-full scrollbar-hidden">
       {/* Background image or video */}
+      <div ref={heroRef}>
       <div
         ref={videoWrapperRef}
         className="absolute top-0 left-0 w-full h-screen overflow-hidden "
@@ -67,15 +84,13 @@ const Hero = () => {
         ></video>
       </div>
 
-      <div className="w-full ">
-        <div className="w-full h-screen z-10">
-          <HeroForeground />
-        </div>
-
-        <div className="w-full ">
-          {/* <Section2 /> */}
-        </div>
+      <div className="w-full h-screen z-10">
+        <HeroForeground />
       </div>
+      </div>
+        <div className="w-full ">
+          <Section2 />
+        </div>
     </section>
   );
 };

@@ -25,10 +25,10 @@ const HeroForeground = () => {
   }, []);
 
   return (
-    <div className="w-full h-full flex justify-evenly items-center overflow-x-hidden relative">
+    <div className="w-full h-full md:flex justify-evenly items-center overflow-x-hidden relative">
       <div
         ref={leftDivRef}
-        className="w-5/12  h-[80vh] mt-18 px-10 flex flex-col justify-around relative "
+        className="w-5/12  h-[70vh] mt-30 px-10 flex flex-col justify-around relative "
       >
         <div className="w-full flex flex-col gap-3">
           <h1 className="text-6xl font-[cizel] uppercase font-semibold text-white">
@@ -48,7 +48,7 @@ const HeroForeground = () => {
         <span className="w-full h-full bg-gray-800/50 absolute -z-10 top-0 left-0 blur-lg rounded-xl opacity-70 "></span>
       </div>
 
-      <div ref={rightDivRef} className="w-5/12 h-[80vh] mt-18 relative px-10 ">
+      <div ref={rightDivRef} className="w-5/12 h-[70vh] mt-30 relative px-10 ">
         <p className="absolute top-1/2 -translate-y-1/2 text-2xl text-right px-10 font-[bebas] text-[#d4d4d4]">
           “Power is not will. It is the phenomenon of physically making things
           happen.” — Madara Uchiha
@@ -56,7 +56,7 @@ const HeroForeground = () => {
         <span className="w-full h-full bg-gray-800/50 absolute -z-10 top-0 left-0 blur-lg rounded-xl opacity-70"></span>
       </div>
 
-      <h6 className="absolute bottom-5 right-10 font-[cizel] text-neutral-300 text-sm">
+      <h6 className="absolute bottom-5 right-10 font-[cizel] text-neutral-300 text-sm animate-pulse">
         Begin Scroll
       </h6>
     </div>

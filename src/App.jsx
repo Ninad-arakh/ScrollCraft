@@ -43,7 +43,6 @@ const App = () => {
         </div>
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/section2" element={<Section2 />} />
           <Route path="/universeScroll" element={<UniverseScroll />} />
           <Route path="/experience" element={<Scrollinitiation />} />
         </Routes>
