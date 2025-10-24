@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import Section1 from "../Experience/Section1";
+import Scrollinitiation from "../Experience/Scrollinitiation"
 
 const UniverseScroll = () => {
-  return (
-    <div>UniverseScroll</div>
-  )
-}
+  const [isFirst, setIsFirst] = useState(true);
 
-export default UniverseScroll
+  useEffect(() => {
+    const tl = setTimeout(() => {
+      setIsFirst(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(tl);
+    };
+  }, []);
+  return isFirst ? <Section1 /> : <Scrollinitiation />;
+};
+
+export default UniverseScroll;

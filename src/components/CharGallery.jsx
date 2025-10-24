@@ -1,8 +1,11 @@
 import React from 'react'
+import AttackOnTitan from '../scrollGallery/AttackOnTitan'
 
 const CharGallery = () => {
   return (
-    <div>CharGallery</div>
+    <div>
+      <AttackOnTitan />
+    </div>
   )
 }
 
