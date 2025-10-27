@@ -1,10 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const HeroForeground = () => {
   const leftDivRef = useRef(null);
   const rightDivRef = useRef(null);
+ 
 
   // animating both divs using gsap
   useGSAP(() => {
@@ -25,22 +26,22 @@ const HeroForeground = () => {
   }, []);
 
   return (
-    <div className="w-full h-full md:flex justify-evenly items-center overflow-x-hidden relative">
+    <div className="w-full  mt-20 sm:mt-0 sm:h-full h-9/12 sm:flex sm:justify-between sm:px-8 items-center overflow-x-hidden relative">
       <div
         ref={leftDivRef}
-        className="w-5/12  h-[70vh] mt-30 px-10 flex flex-col justify-around relative "
+        className="sm:w-5/12  sm:h-[70vh]  sm:px-10 px-3 flex flex-col justify-around relative "
       >
         <div className="w-full flex flex-col gap-3">
-          <h1 className="text-6xl font-[cizel] uppercase font-semibold text-white">
+          <h1 className=" text-5xl sm:text-7xl font-[oxanium] uppercase font-extrabold text-white">
             ScrollCraft
           </h1>
-          <h2 className="text-3xl font-[chizel]  text-[#d4d4d4]">
+          <h2 className="sm:text-3xl text-xl -mt-3 sm:mt-0 sm:text-center font-[chizel]  text-[#d4d4d4]">
             Where every scroll ignites a new universe
           </h2>
         </div>
 
         <div>
-          <h2 className="text-2xl font-[chizel]  text-[#d4d4d4] leading-tight">
+          <h2 className="sm:text-3xl text-xl mt-5 font-[chizel]  text-[#d4d4d4] leading-tight">
             Experience a realm where anime energy meets interactive design —
             powered by GSAP, Rive, and imagination.
           </h2>
@@ -48,15 +49,15 @@ const HeroForeground = () => {
         <span className="w-full h-full bg-gray-800/50 absolute -z-10 top-0 left-0 blur-lg rounded-xl opacity-70 "></span>
       </div>
 
-      <div ref={rightDivRef} className="w-5/12 h-[70vh] mt-30 relative px-10 ">
-        <p className="absolute top-1/2 -translate-y-1/2 text-2xl text-right px-10 font-[bebas] text-[#d4d4d4]">
+      <div ref={rightDivRef} className="sm:w-5/12  h-6/12  sm:h-[70vh]  relative px-10 ">
+        <p className="absolute sm:top-3/4 bottom-8  text-[#d4d4d4]  sm:text-3xl text-2xl text-right sm:px-10 px-3 font-[bebas] ">
           “Power is not will. It is the phenomenon of physically making things
           happen.” — Madara Uchiha
         </p>
         <span className="w-full h-full bg-gray-800/50 absolute -z-10 top-0 left-0 blur-lg rounded-xl opacity-70"></span>
       </div>
 
-      <h6 className="absolute bottom-5 right-10 font-[cizel] text-neutral-300 text-sm animate-pulse">
+      <h6 className="absolute bottom-5 right-10 font-[cizel] text-neutral-300  text-sm animate-pulse">
         Begin Scroll
       </h6>
     </div>

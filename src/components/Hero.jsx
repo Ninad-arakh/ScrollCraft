@@ -14,16 +14,20 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const videoWrapperRef = useRef(null);
   const heroRef = useRef(null);
+  const screen = window.screen.width;
+  let isMob;
+  
+  if(screen <= 486) isMob=true
 
   // top view distortion animation on scroll
   useGSAP(() => {
-    const tl = gsap.timeline({
+    if(!isMob) {const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroRef.current,
         // start: "top -10%",
         start: "top top",
         end: "bottom 20%",
-        scrub: 0.2,
+        scrub: true,
         pin: true,
         // anticipatePin:1,
         // markers: true,
@@ -38,19 +42,20 @@ const Hero = () => {
         filter: "brightness(1)",
       },
       {
-        clipPath: "polygon(5% 0, 95% 0, 100% 102%, 0 102%)",
+        clipPath: "polygon(10% 2%, 90% 2%, 100% 102%, 0 102%)",
         // scale: 1.05,
         filter: "brightness(0.7)",
+        borderRadius: "30%",
         ease: "none",
         overflow: "hidden",
         opacity: 0.9,
       }
-    );
+    );}
   }, []);
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.7,
+      duration: 1.5,
     });
     function raf(time) {
       lenis.raf(time);
@@ -61,6 +66,10 @@ const Hero = () => {
       lenis.destroy();
     };
   }, []);
+
+  const dataLoaded = () =>{
+    // console.log("data Loaded");
+  }
 
   return (
     <section className="absolute top-0 w-full scrollbar-hidden section">
@@ -80,8 +89,9 @@ const Hero = () => {
             muted
             loop
             playsInline
-            className="w-full origin-top bg-cover"
+            className="w-full origin-top bg-cover "
             poster={bgWallPoster}
+            onLoadedData={dataLoaded}
           ></video>
         </div>
 

@@ -10,30 +10,19 @@ gsap.registerPlugin(ScrollTrigger);
 const Section2 = () => {
   const sectionRef = useRef(null);
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const lenis = new Lenis({
-  //     duration: 1,
-  //   });
-  //   function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-  //   requestAnimationFrame(raf);
-
-  //   return () => {
-  //     lenis.destroy();
-  //   };
-  // }, []);
+  let isMob;
+  const screen = window.screen.width
+  if(screen<=486) isMob = true;
 
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top -60%",
+        start: !isMob ? "center 20%" : "30% 80%",
         scrub: 3,
-        end: "bottom 300%",
+        end: !isMob ? "bottom 33%" : "top -2%",
         // markers: true,
+        // ease:"power3.out"
       },
     });
 
@@ -85,24 +74,24 @@ const Section2 = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[100vh] flex flex-col items-center justify-center text-center overflow-hidden transition-colors duration-1000"
+      className="relative sm:w-full w-screen h-[100vh]  flex flex-col items-center justify-center text-center  overflow-hidden transition-colors duration-800"
     >
-      <h2 className="text-7xl font-bold mb-10 font-[orbitron]">
+      <h2 className="sm:text-7xl text-2xl font-bold mb-10  font-[orbitron]">
         The Awakening Realm
       </h2>
-      <p className="max-w-2xl font-[oxanium] font-semibold text-[35px] leading-relaxed">
+      <p className="max-w-2xl font-[oxanium] font-semibold sm:text-[35px] text-2xl sm:leading-relaxed leading-tight">
         The scroll begins to unfold...
       </p>
-      <p className="max-w-2xl font-[oxanium] font-semibold text-[35px] leading-relaxed">
+      <p className="max-w-2xl font-[oxanium] font-semibold sm:text-[35px] text-2xl sm:leading-relaxed leading-tight">
         Whispers of forgotten worlds awaken.
       </p>
-      <p className="max-w-2xl font-[oxanium] font-semibold text-[35px] leading-relaxed">
+      <p className="max-w-2xl font-[oxanium] font-semibold sm:text-[35px] text-2xl sm:leading-relaxed leading-tight">
         Each line of code breathes new life.
       </p>
-      <p className="max-w-2xl font-[oxanium] font-semibold text-[35px] leading-relaxed">
+      <p className="max-w-2xl font-[oxanium] font-semibold sm:text-[35px] text-2xl sm:leading-relaxed leading-tight">
         You are not just a viewer...
       </p>
-      <p className="max-w-2xl font-[oxanium] font-semibold text-[35px] leading-relaxed">
+      <p className="max-w-2xl font-[oxanium] font-semibold sm:text-[35px] text-2xl sm:leading-relaxed leading-tight">
         You are the crafter of this universe.
       </p>
 
