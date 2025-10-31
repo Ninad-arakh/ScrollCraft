@@ -80,7 +80,7 @@ const Hero = () => {
           className="absolute top-0 left-0 w-full h-screen overflow-hidden "
           style={{
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            transition: "clip-path 0.3s ease",
+            transition: "clip-path ease",
           }}
         >
           <video
@@ -107,3 +107,6 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+// clipPath: "polygon(0% 0%, 0% 100%, 64% 100%, 64% 45%, 92% 45%, 92% 45%, 64% 95%, 64% 100%, 100% 100%, 100% 0%)"
