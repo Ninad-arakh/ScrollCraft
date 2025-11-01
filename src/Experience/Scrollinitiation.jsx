@@ -8,6 +8,7 @@ const Scrollinitiation = () => {
 
       {/* <FightScene path="AOT" maxFrames="1106" /> */}
       <FightScene path="ds" maxFrames="0868"  />
+      {/* <FightScene path="Dbs" maxFrames="0603"  /> */}
       
       <div className=" bottom-10  animate-pulse  w-full flex justify-center ">
         <Link to={"/scrollGallery"} className="relative inline-block text-lg group cursor-pointer">
