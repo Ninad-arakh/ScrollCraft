@@ -6,12 +6,14 @@ import Scrollinitiation from "./Experience/Scrollinitiation";
 import Section2 from "./components/Section2";
 import gsap from "gsap";
 import Navbar from "./components/Navbar";
+import InitialLoader from "./components/InitialLoader";
 
 const App = () => {
 
   const navRef = useRef(null);
   const lastScrollY = useRef(window.scrollY);
   const isHidden = useRef(false);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +38,7 @@ const App = () => {
   
   return (
     <div className="w-full h-screen box-border">
+      <InitialLoader />
       <BrowserRouter>
         <div ref={navRef}
           className="fixed top-2 w-full text-white flex justify-center z-50 ">

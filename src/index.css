@@ -37,6 +37,11 @@ body{
     src: url("./assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf")
 }
 
+@font-face {
+  font-family: "MOB";
+  src: url("./assets//fonts/MobPsycho/Mobpsychonum-Regular.ttf");
+}
+
 .navbar {
   position: sticky;
   top: 2px;
@@ -47,3 +52,13 @@ body{
 .navbar.scrolled {
   transform: translateY(-100px);
 }
+
+
+/* Hide scrollbar */
+body.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+body.hide-scrollbar {
+  overflow: hidden;
+}
+

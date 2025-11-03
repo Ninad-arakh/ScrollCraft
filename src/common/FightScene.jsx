@@ -101,7 +101,7 @@ const FightScene = ({path, maxFrames}) => {
 
   return (
     <div className="bg-zinc-900 w-full">
-      <div ref={parentRef} className={`h-[1000vh] bg-zinc-800 w-full relative left-0 top-0`}>
+      <div ref={parentRef} className={`h-[2300vh] bg-zinc-800 w-full relative left-0 top-0`}>
         <div className="h-screen w-full sticky left-0 top-0">
           <canvas ref={canvasRef} className="w-full h-screen" />
         </div>
