@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import HeroForeground from "./HeroForeground";
-import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import bgWall from "/bg-videos/amv_web.mp4";
