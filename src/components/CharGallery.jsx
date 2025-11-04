@@ -1,10 +1,10 @@
 import React from 'react'
-import AttackOnTitan from '../scrollGallery/AttackOnTitan'
+// import AttackOnTitan from '../scrollGallery/AttackOnTitan'
 
 const CharGallery = () => {
   return (
     <div>
-      <AttackOnTitan />
+      {/* <AttackOnTitan /> */}
     </div>
   )
 }

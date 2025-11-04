@@ -77,7 +77,7 @@ const FightScene = ({path, maxFrames}) => {
       gsap.timeline({
         scrollTrigger: {
           trigger: parentRef.current,
-          start: "top top",
+          start: "top -10%",
           end: "bottom bottom",
           scrub: true,
           // markers: true,
