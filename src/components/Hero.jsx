@@ -94,7 +94,7 @@ const Hero = () => {
             muted
             loop
             playsInline
-            className="w-full origin-top bg-cover "
+            className="absolute top-0 left-0 w-full h-full object-cover"
             poster={bgWallPoster}
             onLoadedData={dataLoaded}
           ></video>
@@ -113,4 +113,4 @@ const Hero = () => {
 
 export default Hero;
 
-// clipPath: "polygon(0% 0%, 0% 100%, 64% 100%, 64% 45%, 92% 45%, 92% 45%, 64% 95%, 64% 100%, 100% 100%, 100% 0%)"
+

@@ -40,7 +40,7 @@ const App = () => {
 
   return (
     <div className="w-full h-screen box-border">
-      <InitialLoader />
+      {/* <InitialLoader /> */}
       <BrowserRouter>
         <div
           ref={navRef}
