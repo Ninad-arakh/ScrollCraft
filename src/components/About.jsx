@@ -4,6 +4,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FireParticles from "../common/Particles";
 import Lenis from "lenis";
+import react from "../assets/images/react icon.png"
+import tailwind from "../assets/images/Tailwind CSS.png"
+import gsapPic from "../assets/images/gsap.png"
+import vite from "../assets/images/vite.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -174,15 +178,21 @@ const About = () => {
       </div>
 
       <div className="h-screen w-full bg-gradient-to-tr from-[#18001a] via-[#550058] to-[#20001a]">
-        <div className="w-10/12 mx-auto">
+        <div className="w-10/12 mx-auto flex flex-col gap-5">
           <h1 className="text-[3vw] text-left leading-[8vw] font-[chizel] font-semibold text-red-100 uppercase">
             About Me
           </h1>
-          <p className="text-[2vw]   mx-auto font-[chizel] font-semibold text-red-100 ">
-            Hi, I’m Ninad Arakh — a front-end developer passionate about turning
+          <p className="text-[2vw] -mt-5  mx-auto font-[chizel] font-semibold text-red-100 ">
+            Hi, I’m <span className="font-bold text-[2.5vw] text-red-400"> Ninad Arakh </span> — a front-end developer passionate about turning
             visuals into motion. ScrollCraft is a cinematic web experiment where
             anime-style animation meets modern web technologies.
           </p>
+          <div className=" w-full flex justify-center items-center gap-10 mt-10">
+            <img src={react} alt="reactPng"  className=" w-20 hover:animate-bounce"/>
+            <img src={vite} alt="VitePng"  className=" w-20 hover:animate-bounce"/>
+            <img src={tailwind} alt="tailwind"  className=" w-20 hover:animate-bounce"/>
+            <img src={gsapPic} alt="gsapPng"  className=" w-20 hover:animate-bounce"/>
+          </div>
         </div>
       </div>
     </div>
