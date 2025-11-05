@@ -2,11 +2,9 @@ import React, { Suspense, useEffect, useRef } from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Hero from "./components/Hero";
 import CharGallery from "./components/CharGallery";
-// import Scrollinitiation from "./Experience/Scrollinitiation";
 import gsap from "gsap";
 import Navbar from "./components/Navbar";
 import InitialLoader from "./components/InitialLoader";
-import About from "./components/About";
 const Scrollinitiation = React.lazy(() =>
   import("./Experience/Scrollinitiation")
 );
