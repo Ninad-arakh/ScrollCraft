@@ -6,8 +6,12 @@ import CharGallery from "./components/CharGallery";
 import gsap from "gsap";
 import Navbar from "./components/Navbar";
 import InitialLoader from "./components/InitialLoader";
+import About from "./components/About";
 const Scrollinitiation = React.lazy(() =>
   import("./Experience/Scrollinitiation")
+);
+const About = React.lazy(() =>
+  import("./components/About")
 );
 
 const App = () => {
@@ -40,7 +44,7 @@ const App = () => {
 
   return (
     <div className="w-full h-screen box-border">
-      {/* <InitialLoader /> */}
+      <InitialLoader />
       <BrowserRouter>
         <div
           ref={navRef}
@@ -61,6 +65,14 @@ const App = () => {
           />
 
           <Route path="/scrollGallery" element={<CharGallery />} />
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <About />
+              </Suspense>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

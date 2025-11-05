@@ -39,19 +39,19 @@ const Navbar = () => {
           </Link>
           <Link
             className="font-xl font-medium font-[oxanium] hover:scale-125 transition-all duration-150"
-            to="/"
+            to="/experience"
           >
-            Realms
+            Realm
           </Link>
           <Link
             className="font-xl font-medium font-[oxanium] hover:scale-125 transition-all duration-150"
-            to="/"
+            to="/about"
           >
-            Gallery
+            About
           </Link>
           <Link
             className="font-xl font-medium font-[oxanium] hover:scale-125 transition-all duration-150"
-            to="/"
+            to="/contactme"
           >
             Contact Me
           </Link>
